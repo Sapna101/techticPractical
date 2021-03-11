@@ -42,7 +42,7 @@ export class ChatComponent implements OnInit {
     this.http.get('http://localhost:3000/chat/')
     .subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res);
         if(this.chatlist.length > 0){
           for(let i=0;i<res.length;i++){
             if((res[i].messages.length) != this.chatlist[i].messages.length){
