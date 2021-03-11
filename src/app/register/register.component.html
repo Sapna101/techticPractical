@@ -1,0 +1,20 @@
+<form class="form-horizontal" ngNativeValidate #registerForm>
+  <div class="formview">
+    <div class="title">Sign Up</div>
+    <div class="form-group form-data formdata">
+      <label for="usernm">UserName: </label>
+      <input type="text" class="form-control" id="usernm" placeholder="Enter usernm" [(ngModel)]="userdetails.username" name="user" required>
+    </div>
+    <div class="form-group form-data formdata">
+        <label class="control-label " for="email">Email:     </label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="userdetails.email" name="email" required>
+    </div>
+    <div class="form-group form-data formdata">
+      <label class="control-label " for="pwd">Password:     </label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" [(ngModel)]="userdetails.password" name="password" required>
+    </div>
+    <div class="form-group form-data formdata">
+        <button type="submit" class="btn btn-default" (click)=" registerForm.checkValidity() ? registerUser() : null">Submit</button>
+    </div>
+  </div>
+</form>

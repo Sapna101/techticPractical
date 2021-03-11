@@ -1,0 +1,19 @@
+<form ngNativeValidate #loginform>
+  <div class="formview">
+    <div class="title">Sign In</div>
+    <div *ngIf="errormsg" class="errormsg logindata">
+      {{errorname}}
+    </div>
+    <div class="form-group form-data logindata">
+        <label class="control-label " for="email">Email:     </label>
+        <input type="text" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="logindetails.email" name="email" required>
+    </div>
+    <div class="form-group form-data logindata">
+      <label class="control-label " for="pwd">Password:     </label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" [(ngModel)]="logindetails.password" name="password" required>
+    </div>
+    <div class="form-group form-data logindata">
+        <button type="submit" class="btn btn-default" (click)="loginform.checkValidity() ? loginUser() : null">Submit</button>
+    </div>
+  </div>
+</form>

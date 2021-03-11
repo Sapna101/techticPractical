@@ -1,0 +1,18 @@
+<div class="ms-Grid ">
+  <div class="ms-Grid-row title">
+    Chats
+  </div>
+  <div class="ms-Grid-row">
+    <div class="ms-Grid-col" [ngClass]=" !viewchat ? 'ms-u-lg12' : 'ms-u-lg6' "  >
+      <div class="userview" *ngFor="let chat of chatlist,let i = index;" (click)="openchatscreen(chat,i)" >
+        {{chat.username}}<span>{{difflist[i]}}</span>
+      </div>
+    </div>
+    <div *ngIf="viewchat" class="ms-Grid-col ms-u-lg6 chatbox">
+      <div class="title chattitle">{{chatdata.username}}</div>
+      <div class="msgview" *ngFor="let msg of chatdata.messages" >
+        {{msg}}
+      </div>
+    </div>
+  </div>
+</div>
