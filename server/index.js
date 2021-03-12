@@ -57,6 +57,6 @@ app.get('/login',function(req,res){
 
 app.get('/chat',async function(req,res){
   const resdata = await userchats.find({});
-  console.log(resdata);
+  // console.log(resdata);
   res.json(resdata);
 });

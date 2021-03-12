@@ -39,20 +39,22 @@ export class ChatComponent implements OnInit {
   }
 
   getchatdata(){
+    let resdata : any = [];
     this.http.get('http://localhost:3000/chat/')
     .subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
+        resdata = res;
         if(this.chatlist.length > 0){
-          for(let i=0;i<res.length;i++){
-            if((res[i].messages.length) != this.chatlist[i].messages.length){
-              this.difflist[i] += ((res[i].messages.length)-(this.chatlist[i].messages.length));
+          for(let i=0;i<resdata.length;i++){
+            if((resdata[i].messages.length) != this.chatlist[i].messages.length){
+              this.difflist[i] += ((resdata[i].messages.length)-(this.chatlist[i].messages.length));
             }else{
               this.difflist[i] += 0;
             }
           }
         }
-        this.chatlist = res;
+        this.chatlist = resdata;
       },(err) => {
         console.log(err);
       }
