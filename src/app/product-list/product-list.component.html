@@ -1,0 +1,10 @@
+<div class="ms-Grid">
+  <div class="ms-Grid-row">
+    <input type="text" id="searchbox" [(ngModel)]="searchBy" (keyup)="searchByQuery()">
+  </div>
+  <div class="ms-Grid-row" *ngFor="let product of productSearchList">
+    <div class="ms-Grid-col ms-u-lg6 userview">
+      {{product.name}}
+    </div>
+  </div>
+</div>

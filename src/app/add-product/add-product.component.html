@@ -1,0 +1,15 @@
+<div class="titleview">Add New Products</div>
+<div class="ms-Grid userview">
+    <div class="ms-Grid-row">
+      <input type="file" id="inputXLFile" required/>
+    </div>
+    <div class="ms-Grid-row errormessage" *ngIf="!fileUploded">
+      No file selected to upload
+    </div>
+    <div class="ms-Grid-row errormessage" *ngIf="duplicateCode">
+      Duplicate code found
+    </div>
+    <div class="ms-Grid-row">
+    <button type="submit" (click)="readFileData()" >Submit</button>
+    </div>
+</div>
